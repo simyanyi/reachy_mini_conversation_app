@@ -58,7 +58,7 @@ AVAILABLE_VOICES: list[str] = [
     "shimmer",
     "verse",
 ]
-OPENAI_DEFAULT_VOICE = "cedar"
+OPENAI_DEFAULT_VOICE = "marin"
 
 # Qwen3-TTS CustomVoice speaker catalog from the deployed Hugging Face backend.
 HF_AVAILABLE_VOICES: list[str] = [
@@ -106,7 +106,7 @@ class HFBackendDefaults:
     # Users who need a custom target should use HF_REALTIME_CONNECTION_MODE=local
     # with HF_REALTIME_WS_URL.
     session_url: str = HF_REALTIME_SESSION_PROXY_URL
-    voice: str = "Aiden"
+    voice: str = "Ryan"
     model_name: str = ""
     direct_port: int = 8765
 
@@ -125,7 +125,7 @@ BACKEND_LABEL_BY_PROVIDER = {
 DEFAULT_VOICE_BY_BACKEND = {
     OPENAI_BACKEND: OPENAI_DEFAULT_VOICE,
     GEMINI_BACKEND: "Kore",
-    HF_BACKEND: HF_DEFAULTS.voice,
+    HF_BACKEND: "Ryan",
 }
 
 logger = logging.getLogger(__name__)
