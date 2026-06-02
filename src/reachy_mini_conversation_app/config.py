@@ -58,7 +58,6 @@ AVAILABLE_VOICES: list[str] = [
     "shimmer",
     "verse",
 ]
-OPENAI_DEFAULT_VOICE = "marin"
 
 # Qwen3-TTS CustomVoice speaker catalog from the deployed Hugging Face backend.
 HF_AVAILABLE_VOICES: list[str] = [
@@ -72,6 +71,37 @@ HF_AVAILABLE_VOICES: list[str] = [
     "Uncle_Fu",
     "Vivian",
 ]
+
+# Kokoro TTS voices from the deployed Hugging Face backend.
+# Format: {language_code}{gender}_{voice_name}
+# Languages: a=American, b=British, e=Spanish, f=French, h=Hindi, i=Italian, j=Japanese, p=Portuguese, z=Chinese
+# Gender: f=female, m=male
+KOKORO_TTS_VOICES: list[str] = [
+    # American English (a)
+    "af_alloy", "af_aoede", "af_bella", "af_heart", "af_jessica", "af_kore", "af_nicole", "af_nova", "af_river", "af_sarah", "af_sky",
+    "am_adam", "am_echo", "am_eric", "am_fenrir", "am_liam", "am_michael", "am_onyx", "am_puck", "am_santa",
+    # British English (b)
+    "bf_alice", "bf_emma", "bf_isabella", "bf_lily",
+    "bm_daniel", "Ryan", "bm_george", "bm_lewis",
+    # Spanish (e)
+    "ef_dora", "em_alex", "em_santa",
+    # French (f)
+    "ff_siwis",
+    # Hindi (h)
+    "hf_alpha", "hf_beta", "hm_omega", "hm_psi",
+    # Italian (i)
+    "if_sara", "im_nicola",
+    # Japanese (j)
+    "jf_alpha", "jf_gongitsune", "jf_nezumi", "jf_tebukuro", "jm_kumo",
+    # Portuguese (p)
+    "pf_dora", "pm_alex", "pm_santa",
+    # Chinese (z)
+    "zf_xiaobei", "zf_xiaoni", "zf_xiaoxiao", "zf_xiaoyi",
+    "zm_yunjian", "zm_yunxi", "zm_yunxia", "zm_yunyang",
+]
+
+# Combined voice list - Qwen3 + Kokoro (default Qwen3 for backward compatibility)
+HF_AVAILABLE_VOICES: list[str] 
 
 # Voices supported by the Gemini Live API
 GEMINI_AVAILABLE_VOICES: list[str] = [
@@ -123,7 +153,7 @@ BACKEND_LABEL_BY_PROVIDER = {
     HF_BACKEND: "Hugging Face",
 }
 DEFAULT_VOICE_BY_BACKEND = {
-    OPENAI_BACKEND: OPENAI_DEFAULT_VOICE,
+    OPENAI_BACKEND: "shimmer",
     GEMINI_BACKEND: "Kore",
     HF_BACKEND: "Ryan",
 }

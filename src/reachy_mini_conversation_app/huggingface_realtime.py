@@ -94,7 +94,7 @@ class HuggingFaceRealtimeHandler(BaseRealtimeHandler):
                     # compatible server uses rate=None for native 16 kHz mode.
                     format=_native_rate_audio_pcm(),  # type: ignore[typeddict-item]
                     transcription=AudioTranscriptionParam(model="gpt-4o-transcribe", language="en"),
-                    turn_detection=ServerVad(type="server_vad", interrupt_response=True),
+                    turn_detection=ServerVad(type="server_vad", interrupt_response=False),
                 ),
                 output=RealtimeAudioConfigOutputParam(
                     format=_native_rate_audio_pcm(),  # type: ignore[typeddict-item]
