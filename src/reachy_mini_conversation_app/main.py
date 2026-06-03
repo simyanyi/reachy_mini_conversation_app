@@ -1,4 +1,6 @@
 """Entrypoint for the Reachy Mini conversation app."""
+import matplotlib
+matplotlib.use('Agg')
 
 import os
 import sys
